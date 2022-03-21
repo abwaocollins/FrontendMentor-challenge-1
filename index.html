@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background: hsl(216, 12%, 8%);
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-family: 'Overpass', sans-serif;
+    }
+    a{
+      text-decoration: none;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    .rating_container{
+      width: 28em;
+      height: 30em;
+      border-radius: 20px;
+      /* border: 2px solid #000; */
+      padding: 2em;
+      /* background-image: linear-gradient(115deg,  hsl(213, 19%, 18%),hsl(216, 12%, 8%)); */
+      background: radial-gradient(ellipse at top, hsl(213, 19%, 18%),hsl(216, 12%, 8%) );
+            
+      background-clip: padding-box;
+      
+     
+      
+  
+
+    }
+
+    .align_center{
+      text-align: center;
+    }
+
+    .rating_container.active{
+      display: none;
+     
+    }
+    .icon{
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: hsl(213, 19%, 18%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      
+    }
+    .icon2{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+
+    }
+    h1{
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: hsl(0, 0%, 100%);
+    }
+    p{
+      font-size: 15px;
+      color: hsl(217, 12%, 63%);
+      line-height: 1.6;
+
+    }
+    .boxes{
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+      
+    }
+    .rate{
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: hsl(213, 19%, 18%);
+      color: hsl(0, 0%, 100%);
+      transition: .5s ease;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .rate.active{
+      background-color: hsl(217, 12%, 63%);
+    }
+
+    .rate:hover{
+      background: hsl(25, 97%, 53%);
+      
+    }
+    .btn{
+      display: block;
+      margin-top: 40px;
+      padding: 15px 147px;
+      color: #fff;
+      background: hsl(25, 97%, 53%);
+      border-radius: 30px;
+      cursor: pointer;
+      transition: .5s ease;
+      font-weight: 700;
+    }
+    .btn:hover{
+      color: hsl(25, 97%, 53%);
+      background: hsl(0, 0%, 100%);
+    }
+    h3{
+      font-size: 15px;
+      display: inline-block;
+      background: hsl(213, 19%, 18%);
+      color: hsl(25, 97%, 53%);
+      padding: 8px 25px;
+      border-radius: 42px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .two{
+      padding-top: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Rating state start -->
+
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+
+  <!-- You selected Add rating here out of 5 -->
+
+  <!-- Thank you!
+
+  We appreciate you taking the time to give a rating. If you ever need more support, 
+  don’t hesitate to get in touch! -->
+
+  <!-- Thank you state end -->
+  <div class="rating_container main">
+    <div class="icon"><img src="/images/icon-star.svg" alt=""></div>
+    <div class="content">
+      <h1>How did we do?</h1>
+      <p>Please let us know how we did with your support request. All feedback is appreciated 
+  to help us improve our offering!</p>
+    </div>
+  
+      <div class="boxes">
+        <div class="rate" id="one">1</div>
+        <div class="rate" id="two">2</div>
+        <div class="rate" id="three">3</div>
+        <div class="rate" id="four">4</div>
+        <div class="rate" id="five">5</div>
+      </div>
+
+      <a href="#" class="btn">SUBMIT</a>
+    
+  </div>
+
+  <div class="rating_container align_center active">
+    
+    <div class="icon2">
+      <img src="/images/illustration-thank-you.svg" alt="">
+    </div>
+    <h3>You selected <span id="rate_value">2</span> out of 5 </h3>
+    <h1 class="two">Thank You!</h1>
+    <p style="text-align: center;">We appreciate you taking the time to give a rating. If you ever need more support, 
+  don’t hesitate to get in touch!</p>
+
+  </div>
+
+<!--   
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Collins Abwao</a>.
+  </div> -->
+  <script>
+    const container = document.querySelector(".rating_container.main")
+    const container2 = document.querySelector(".rating_container.align_center")
+    const sub_btn = document.querySelector(".btn")
+
+    const updated_value = document.querySelector("#rate_value")
+    const ratings = document.querySelectorAll(".rate");
+    ratings.forEach(element => {
+      element.addEventListener("click",()=>{
+        updated_value.innerHTML=element.innerHTML;
+        element.classList.toggle('active')
+
+      })
+      // console.log(element.innerHTML)
+    });
+
+    sub_btn.addEventListener("click",()=>{
+      container.classList.add('active')
+      container2.classList.remove('active');
+    })
+    
+  </script>
+</body>
+</html>
